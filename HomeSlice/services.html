@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Slice</title>
+            <link rel="stylesheet" href="style.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+         
+        <style>
+            .CardWithTextOnTheLeft{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 32px;
+                padding: 40px 20px;
+                color: #50311b;
+                flex-wrap: wrap;
+                margin-bottom: 50px;
+            }
+            .HalfImg1{
+                width: 400px;
+                height: 300px;
+                border-radius: 12px;
+                filter: drop-shadow(8px 8px 10px gray);
+                transition: transform 0.3s ease-in-out;
+            }
+            .HalfImg1:hover {
+                transform: scale(1.05);
+            }
+            .HalfImg{
+                width: 300px;
+                height: 300px;
+                border-radius: 12px;
+                filter: drop-shadow(8px 8px 10px gray);
+                transition: transform 0.3s ease-in-out;
+            }
+            .HalfImg:hover {
+                transform: scale(1.05);
+            }
+            .txt1{
+                max-width: 500px;
+                flex: 1;
+                min-width: 300px;
+                text-align: center;
+            }
+            .txt1 h2{
+                font-size: 24px;
+            }
+            .txt1 p{
+                font-size: 16px;
+                margin-top: 16px;
+            }
+            .VenuePros{
+                list-style: none;
+                padding-left: 15px;
+                text-align: left;            
+            }
+            .VenuePros > li{
+                margin-bottom: 5px;
+            }
+            .BulletIcon{
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            .CardWithTextOnTheLeft > div > .booking,
+            .CardWithTextOnTheRight > div > .booking {
+                width: 250px;
+                padding: 15px 20px;
+                background: radial-gradient(circle, #fff1cd, #7a863b);
+                color: #50311b;
+                font-family: 'Montserrat' , sans-serif;
+                font-weight: 600;
+                border: none;
+                filter: drop-shadow(8px 8px 10px gray);
+                border-radius: 8px;
+                font-size: 16px;
+                transition: transform 0.3s ease-in-out;
+                cursor: pointer;
+                margin-top: 20px;
+                text-decoration: none; 
+                display: inline-block;
+            }
+            .CardWithTextOnTheLeft > div > .booking:hover,
+            .CardWithTextOnTheRight > div > .booking:hover {
+                transform: scale(1.1);
+            }
+
+
+        </style>    
+    </head>
+    
+    <body>
+        <!-- Header section with nav menu and logo -->
+        <header>
+            <a href="./home.html" class="headerLogoMobile">
+                <!--logo-->
+                <img class="MainHomeSlice" src="assets/MainHomeSlice.png" alt="HomeSlice logo">
+            </a>
+            <!--sidebar open button-->
+            <button id="OpenSidebarButton" onclick="openSidebar()">
+                <img src="assets/icons/SidebarButtonB.png" height="40" width="40" alt="Open menu">
+
+            </button>
+            <!--Nav bar with links to other pages-->
+            <nav id="navbar">
+                <ul>
+                    <li><button id="CloseSidebarButton" onclick="closeSidebar()">
+                        <!--sidebar close button-->
+                        <img src="assets/icons/icons8-close-150B.png" height="40" width="40" alt="Close menu">
+                    </button></li>
+                    <li><a href="./home.html">HOME</a></li>
+                    <li><a href="./menu.html">MENU</a></li>
+                    <li><a href="./services.html">SERVICES</a></li>
+                </ul>
+            </nav>
+            <!--when overlay clicked it closes the sidebar-->
+            <div id="overlay" onclick="closeSidebar()"></div>
+        </header>
+
+
+        <!--page title-->
+        <div class="menu">
+            <h2>Share Home Slice</h2>
+            <p>More than a meal - it's an experience!</p>
+        </div>
+
+
+        <!--section for venue hire & private events-->
+        <div class="CardWithTextOnTheLeft">
+            <div class="txt1">
+                <h2>Venue Hire & Private Events</h2>
+                <p>Looking for the perfect space for your special occasion? Home Slice offers a warm, intimate setting for celebrations, corporate events, and gatherings of all kinds. Our dedicated team will work with you to create a memorable experience.</p>
+                <ul class="VenuePros">
+                    <li><img src="assets/icons/icons8-users-90.png" alt="group of people icon" class="BulletIcon" style="height: 25px;">Accommodates up to 60 guests</li>
+                    <li><img src="assets/icons/icons8-utensils-100.png" alt="utensils icon" class="BulletIcon" style="height: 23px;">Custom menu planning available</li>
+                    <li><img src="assets/icons/icons8-party-popper-64.png" alt="party popper icon" class="BulletIcon" style="height: 30px;">Perfect for birthdays, weddings, corporate events</li>
+                </ul>
+                <!-- Link to booking page -->
+                <a href="booking.html" class="booking">Inquire About Venue Hire</a>
+            </div>
+            <img class="HalfImg1" src="assets/exterior.png" alt="The exterior of a two-story, red brick resturant" style="max-width: 90%;">
+        </div>
+
+        
+        <!-- Section for catering services -->
+        <div class="CardWithTextOnTheRight">
+            <img class="HalfImg" src="assets/catering.png" alt="The Home Slice catering experience in action, with a chef preparing pizzas for a lively family party in a garden.">
+            <div class="txt1">
+                <h2>Catering Services</h2>
+                <p>Bring the Home Slice experience to your event. Our catering services deliver the same quality and warmth you love, wherever you need us. From corporate lunches to family celebrations, we've got you covered.</p>
+                <p>"The catering from Home Slice made our sons birthday unforgettable. Guests are still talking about the pizza!"
+                — Jessica & Tom</p>
+                <!-- Link to booking page -->
+                <a href="booking.html" class="booking">Request Catering Quote</a>
+            </div>
+        </div>
+
+
+        
+        <!-- email section -->
+        <section class="py-5" id="news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="headings mb-4">EMAIL NEWSLETTER</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                
+                    <div class="col-lg-6 text-center text-lg-end mb-3 mb-lg-0">
+                        <p class="m-0 fs-5">Subscribe to our Newsletter for Meal discounts and Updates? Sign up!</p>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <form onsubmit="return false;">
+                            <div class="input-group">
+                                <input id="newsletterEmail" type="email" class="form-control" placeholder="Enter your email..." aria-label="Enter your email">
+                                <button class="btn btn-warning" type="submit" id="buttonSubscribe" onclick="sub()" style="background: radial-gradient(circle, #fff1cd, #7a863b); border: none;">Subscribe</button>
+                            
+                            </div>
+                            <br><p id="newsletterMessage" style="text-align: center; margin-top: 15px; font-weight: 600;"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- footer section -->
+        <footer>
+            <div class="footerDiv">
+                <a href="./home.html"><img class="fLogo hover" src="assets/TextHomeSlice.png" alt="text Home Slice logo in a bubbly font and orange colour"></a>
+                <h6 class="hover">A Bite From Home.</h6>
+            </div>
+
+            <!-- Contact information section -->
+            <div class="footerDiv">
+                <h3 class="hover">Contact Us</h3>
+                
+                <a class="hover" href="https://www.google.com/maps/search/111+Piccadilly+Greater+Manchester,+M1+2HY" target="_blank">
+                    <p>Our Location</p>
+                </a>
+                <a class="hover" href="tel:+447993230928">
+                    <p>Call Us</p>
+                </a>
+                <a class="hover" href="mailto:52so3yauee@tiffincrane.com">
+                    <p>Email Us</p>
+                </a>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footerDiv"> 
+                <h3 class="hover">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-facebook-100.png" alt="facebook logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-instagram-100.png" alt="instagram logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-twitter-100.png" alt="X logo" style="height: 70px;"></a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="copyrightBar">
+            <p>© 2025 Home Slice. All Rights Reserved.</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

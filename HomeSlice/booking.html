@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Slice
+            </title>
+            <link rel="stylesheet" href="style.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+         
+        <style>
+            #submitData {
+                background: radial-gradient(circle, #fff1cd, #7a863b);
+                color: #50311b;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 600;
+                font-size: 24px;
+                border: none; 
+                border-radius: 16px;
+                filter: drop-shadow(0px 4px 6px black);
+                transition: transform 0.3s ease-in-out;
+                height: 60px;
+            }
+            #submitData:hover {
+                transform: scale(1.04);
+            }
+        </style>    
+    </head>
+    
+    <body>
+        <!-- Header section with nav menu and logo -->
+        <header>
+            <a href="./home.html" class="headerLogoMobile">
+                <!--logo-->
+                <img class="MainHomeSlice" src="assets/MainHomeSlice.png" alt="HomeSlice logo">
+            </a>
+            <!--sidebar open button-->
+            <button id="OpenSidebarButton" onclick="openSidebar()">
+                <img src="assets/icons/SidebarButtonB.png" height="40" width="40" alt="Open menu">
+
+            </button>
+            <!--Nav bar with links to other pages-->
+            <nav id="navbar">
+                <ul>
+                    <li><button id="CloseSidebarButton" onclick="closeSidebar()">
+                        <!--sidebar close button-->
+                        <img src="assets/icons/icons8-close-150B.png" height="40" width="40" alt="Close menu">
+                    </button></li>
+                    <li><a href="./home.html">HOME</a></li>
+                    <li><a href="./menu.html">MENU</a></li>
+                    <li><a href="./services.html">SERVICES</a></li>
+                </ul>
+            </nav>
+            <!--when overlay clicked it closes the sidebar-->
+            <div id="overlay" onclick="closeSidebar()"></div>
+        </header>
+
+
+        <!-- Main booking form section -->
+        <form onsubmit="return false;" class="shadow p-4" style="background-color: #fff1cd; color: #50311b;">
+            <!-- Dropdown to select booking type -->
+            <div class="mb-3">
+                <label for="bookingType" class="form-label">Booking Type</label>
+                <select id="bookingType" class="form-select" onchange="updateBookingForm()">
+                    <option value="table">Book a Table</option>
+                    <option value="venue">Venue Hire & Private Events</option>
+                    <option value="catering">Catering Services</option>
+                </select>
+            </div>
+
+            <!-- Fields for table booking -->
+            <div id="tableBookingFields">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-4">
+                        <label for="partySize" class="form-label">Number of Guests</label>
+                        <input id="partySize" type="number" class="form-control" placeholder="e.g., 4" min="1">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="bookingDate" class="form-label">Date</label>
+                        <input id="bookingDate" type="date" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="bookingTime" class="form-label">Time</label>
+                        <select id="bookingTime" class="form-select">
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fields for venue booking -->
+            <div id="venueBookingFields" style="display: none;">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="venueGuests" class="form-label">Estimated Guests</label>
+                        <input id="venueGuests" type="number" class="form-control" placeholder="e.g., 50" min="1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="venueDate" class="form-label">Event Date</label>
+                        <input id="venueDate" type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="venueEventType" class="form-label">Event Type</label>
+                    <input id="venueEventType" type="text" class="form-control" placeholder="e.g., Birthday Party, Corporate Event">
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="venueName" class="form-label">Contact Name</label>
+                        <input id="venueName" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="venueEmail" class="form-label">Contact Email</label>
+                        <input id="venueEmail" type="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="venueDetails" class="form-label">Additional Details</label>
+                    <textarea id="venueDetails" class="form-control" rows="3" placeholder="Tell us more about your event..."></textarea>
+                </div>
+            </div>
+
+            <!-- Fields for catering booking -->
+            <div id="cateringBookingFields" style="display: none;">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="cateringGuests" class="form-label">Number of Guests</label>
+                        <input id="cateringGuests" type="number" class="form-control" placeholder="e.g., 30" min="1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cateringDate" class="form-label">Event Date</label>
+                        <input id="cateringDate" type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cateringAddress" class="form-label">Event Address</label>
+                    <textarea id="cateringAddress" class="form-control" rows="2" placeholder="123 Main St, City..." required></textarea>
+                </div>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <label for="cateringName" class="form-label">Contact Name</label>
+                        <input id="cateringName" type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cateringEmail" class="form-label">Contact Email</label>
+                        <input id="cateringEmail" type="email" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="cateringDetails" class="form-label">Menu / Dietary Requirements</label>
+                    <textarea id="cateringDetails" class="form-control" rows="3" placeholder="e.g., Vegetarian options, nut allergies..."></textarea>
+                </div>
+            </div>
+
+
+            <!-- Submit button -->
+            <div class="d-grid">
+                <button id="submitData" onclick="submitBooking()">Check Availability</button>
+            </div>
+
+        
+            <div id="bookingMessage" class="mt-4"></div>
+        </form>
+
+
+        <!-- email section -->
+        <section class="py-5" id="news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="headings mb-4">EMAIL NEWSLETTER</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                
+                    <div class="col-lg-6 text-center text-lg-end mb-3 mb-lg-0">
+                        <p class="m-0 fs-5">Subscribe to our Newsletter for Meal discounts and Updates? Sign up!</p>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <form onsubmit="return false;">
+                            <div class="input-group">
+                                <input id="newsletterEmail" type="email" class="form-control" placeholder="Enter your email..." aria-label="Enter your email">
+                                <button class="btn btn-warning" type="submit" id="buttonSubscribe" onclick="sub()" style="background: radial-gradient(circle, #fff1cd, #7a863b); border: none;">Subscribe</button>
+                            
+                            </div>
+                            <br><p id="newsletterMessage" style="text-align: center; margin-top: 15px; font-weight: 600;"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- footer section -->
+        <footer>
+            <div class="footerDiv">
+                <a href="./home.html"><img class="fLogo hover" src="assets/TextHomeSlice.png" alt="text Home Slice logo in a bubbly font and orange colour"></a>
+                <h6 class="hover">A Bite From Home.</h6>
+            </div>
+
+            <!-- Contact information section -->
+            <div class="footerDiv">
+                <h3 class="hover">Contact Us</h3>
+                
+                <a class="hover" href="https://www.google.com/maps/search/111+Piccadilly+Greater+Manchester,+M1+2HY" target="_blank">
+                    <p>Our Location</p>
+                </a>
+                <a class="hover" href="tel:+447993230928">
+                    <p>Call Us</p>
+                </a>
+                <a class="hover" href="mailto:52so3yauee@tiffincrane.com">
+                    <p>Email Us</p>
+                </a>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footerDiv"> 
+                <h3 class="hover">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-facebook-100.png" alt="facebook logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-instagram-100.png" alt="instagram logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-twitter-100.png" alt="X logo" style="height: 70px;"></a>
+                </div>
+            </div>
+        </footer>
+
+        <div class="copyrightBar">
+            <p>© 2025 Home Slice. All Rights Reserved.</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

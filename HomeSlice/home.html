@@ -1,0 +1,271 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Slice</title>
+            <link rel="stylesheet" href="style.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+         <style>
+            .hoverS:hover{
+                color: #ffba1b;
+            }
+            /*Styling for guest favorite cards*/
+            .card0 {
+                    flex-basis: 280px;
+                    align-items: center;
+                    padding: 0;
+                    transition: transform 0.3s ease-in-out;
+                    text-align: center;
+                }
+                .card0:hover {
+                    transform: scale(1.04);
+                    
+                }
+                .card0 h3:hover {
+                    color: #ffbb1d;
+                }
+                .card0 h3{
+                    color: #50311b;
+                    font-size:larger;
+                    font-family: 'Montserrat' , sans-serif;
+                    font-weight: 600;
+                    margin-top: 10px;
+                }
+            
+         </style>
+    </head>
+    
+    <body>
+        <!-- Header section with nav menu and logo -->
+        <header>
+            <a href="./home.html" class="headerLogoMobile">
+                <!--logo-->
+                <img class="MainHomeSlice" src="assets/MainHomeSlice.png" alt="HomeSlice logo">
+            </a>
+            <!--sidebar open button-->
+            <button id="OpenSidebarButton" onclick="openSidebar()">
+                <img src="assets/icons/SidebarButtonB.png" height="40" width="40" alt="Open menu">
+
+            </button>
+            <!--Nav bar with links to other pages-->
+            <nav id="navbar">
+                <ul>
+                    <li><button id="CloseSidebarButton" onclick="closeSidebar()">
+                        <!--sidebar close button-->
+                        <img src="assets/icons/icons8-close-150B.png" height="40" width="40" alt="Close menu">
+                    </button></li>
+                    <li><a href="./home.html">HOME</a></li>
+                    <li><a href="./menu.html">MENU</a></li>
+                    <li><a href="./services.html">SERVICES</a></li>
+                </ul>
+            </nav>
+            <!--when overlay clicked it closes the sidebar-->
+            <div id="overlay" onclick="closeSidebar()"></div>
+        </header>
+        
+        
+
+
+        <main>
+            <!--Welcome image with text at the beginning-->
+            <div class="CardWithTextOnTop">
+                <img class="FullImg" src="assets/p2.png" alt="Three Home Style Pizzas on a counter top with a open brick and morter oven">
+                <h2 class="txtH hoverS">A Bite From Home</h2>
+                <p class="txtP">Experience the warmth of home in every bite. We believe that great food brings people together, and our kitchen is where tradition meets passion. From our family to yours, welcome home.</p>
+                <a href="menu.html" class="menuButton">View Menu</a>
+            </div>
+            
+
+            <!--2nd image with text on the righ-->
+            <div class="CardWithTextOnTheRight">
+                <img class="HalfImg" src="assets/p1.png" alt="Freshly cooked pizza out the oven ready to be Served">
+                <div class="txt1">
+                    <h3>"Home Slice isn't just a restaurant—it's a feeling. Every visit feels like coming home."</h3>
+                    <p style="color: #50311bd3;">— Sarah M.</p>
+                </div>
+            </div>
+            
+
+            <!--eEvent schedule section-->
+            <section class="cardSection">
+                <h2 class="headings">EVENTS SCHEDULE</h2>
+                <p>Join us for special events and experiences throughout the week</p>
+                    
+                <a href="menu.html#visitUs"><div class="card-container">
+                        <div class="card">
+                            <h3>Tuesday</h3>
+                            <p>Live Music</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Wednesday</h3>
+                            <p>Make Your Own Pizza!</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Friday</h3>
+                            <p>Board Game Social</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h3>Sunday</h3>
+                            <p>Trivia Night</p>
+                        </div>
+                    </div></a>
+
+            </section>
+        </main>
+ 
+
+        <!--guest favorites section-->
+        <a href="menu.html#guestFavorites"><section class="cardSection">
+            <h2 class="headings">GUEST FAVORITES</h2>
+            <p>Don't know where to start? Try one of our most popular dishes</p>
+            <div class="card-container">
+
+                <div class="card0">
+                    <img src="assets/Margherita-Pizza.png" alt="Margherita Pizza" style="width: 90%; height: auto; border-radius: 8px;">
+                    <h3>Margherita Pizza</h3>
+                </div>
+                <div class="card0">
+                    <img src="assets/Hawaiian-Pizza.png" alt="Hawaiian Pizza" style="width: 90%; height: auto; border-radius: 8px;">
+                    <h3>Hawaiian Pizza</h3>
+                </div>
+
+                <div class="card0">
+                    <img src="assets/Supreme-Pizza.png" alt="Supreme Pizza" style="width: 90%; height: auto; border-radius: 8px;">
+                    <h3>Supreme Pizza</h3>
+                </div>
+
+                <div class="card0">
+                    <img src="assets/Wild-Mushroom-Meltique-Pizza.png" alt="Wild Mushroom Meltique Pizza" style="width: 90%; height: auto; border-radius: 8px;">
+                    <h3>Wild Mushroom Meltique Pizza</h3>
+                </div>
+
+            </div>
+        </section></a>
+
+
+        <!--customer reviews carousel-->
+        <section class="cardSection">
+            <h2 class="headings">HAPPY CUSTOMER REVIEWS!</h2>
+
+            <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#reviewCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <!-- 1 -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="review-content-box">
+                        <h3>"The best pizza!"</h3>
+                        <p>"The best pizza I've had outside of Italy. The atmosphere is cozy, and the staff is incredibly friendly. A must-visit!"</p>
+                        <p>— Sarah K.</p>
+                    </div>
+                  </div>
+                  <!-- 2 -->
+                  <div class="carousel-item">
+                    <div class="review-content-box">
+                        <h3>"Made our party!"</h3>
+                        <p>"Home Slice catered our son's birthday, and it was unforgettable. Guests are still talking about the pizza!"</p>
+                        <p class="author">— Jessica & Tom</p>
+                    </div>
+                  </div>
+                  <!-- 3 -->
+                  <div class="carousel-item">
+                    <div class="review-content-box">
+                        <h3>"A True Gem"</h3>
+                        <p>"From the appetizers to the dessert, everything was perfect. We'll be back every week. 10/10."</p>
+                        <p class="author">— Mark T.</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- carousel nav buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+
+
+        <!-- email section -->
+        <section class="py-5" id="news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2 class="headings mb-4">EMAIL NEWSLETTER</h2>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center align-items-center">
+                
+                    <div class="col-lg-6 text-center text-lg-end mb-3 mb-lg-0">
+                        <p class="m-0 fs-5">Subscribe to our Newsletter for Meal discounts and Updates? Sign up!</p>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <form onsubmit="return false;">
+                            <div class="input-group">
+                                <input id="newsletterEmail" type="email" class="form-control" placeholder="Enter your email..." aria-label="Enter your email">
+                                <button class="btn btn-warning" type="submit" id="buttonSubscribe" onclick="sub()" style="background: radial-gradient(circle, #fff1cd, #7a863b); border: none;">Subscribe</button>
+                            
+                            </div>
+                            <br><p id="newsletterMessage" style="text-align: center; margin-top: 15px; font-weight: 600;"></p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- footer section -->
+        <footer>
+            <div class="footerDiv">
+                <a href="./home.html"><img class="fLogo hover" src="assets/TextHomeSlice.png" alt="text Home Slice logo in a bubbly font and orange colour"></a>
+                <h6 class="hover">A Bite From Home.</h6>
+            </div>
+
+            <!-- Contact information section -->
+            <div class="footerDiv">
+                <h3 class="hover">Contact Us</h3>
+                
+                <a class="hover" href="https://www.google.com/maps/search/111+Piccadilly+Greater+Manchester,+M1+2HY" target="_blank">
+                    <p>Our Location</p>
+                </a>
+                <a class="hover" href="tel:+447993230928">
+                    <p>Call Us</p>
+                </a>
+                <a class="hover" href="mailto:52so3yauee@tiffincrane.com">
+                    <p>Email Us</p>
+                </a>
+            </div>
+
+            <!-- Social media links -->
+            <div class="footerDiv"> 
+                <h3 class="hover">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-facebook-100.png" alt="facebook logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-instagram-100.png" alt="instagram logo" style="height: 70px;"></a>
+                    <a href="https://example.com/" target="_blank"><img src="assets/icons/icons8-twitter-100.png" alt="X logo" style="height: 70px;"></a>
+                </div>
+            </div>
+        </footer>
+
+        
+        <div class="copyrightBar">
+            <p>© 2025 Home Slice. All Rights Reserved.</p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

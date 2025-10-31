@@ -1,0 +1,481 @@
+
+/* green - #7a863b
+    orangeish - #ffbb1d
+    yellowish - #fff1cd
+    brownish - #e09a4c
+    brown - #50311b
+*/
+/*styles for all*/
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+}
+
+ body{
+    background-color: #fff1cd !important;
+ }
+
+h1,h2,h3,h4{
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none !important;
+    color: #50311b;
+}
+
+/*styles for header and nav*/
+.MainHomeSlice{
+    width: 150px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff1cd;
+    border-bottom:solid #e09a4c;
+}
+nav{
+    display: flex;
+    background-color: #fff1cd;
+    z-index: 10;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+}
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: #50311b;
+    padding: 16px 32px;
+    transition: background-color 150ms ease-in;
+}
+nav a:hover{
+    background-color: #ffebb9;
+    color: #ffbb1d;
+    border-radius: 10px;
+}
+/*Mobile sidebar buttons anf overlay*/
+#OpenSidebarButton{
+    display: none; /*hides it on desktop*/
+    background: none;
+    border: none;
+    padding: 16px;
+    margin-left: auto;
+    cursor: pointer;
+}
+#CloseSidebarButton{
+    display: none; /*hides it on desktop*/
+    background: none;
+    border: none;
+    padding: 30px;
+    cursor: pointer;
+}
+#overlay{
+    background: #e09b4c76;
+    position: fixed;
+    inset: 0;
+    z-index: 9; /* put the orange tint behind the sidebar with z-index: 10*/
+    display: none;
+}
+.headerLogoMobile{
+    display: block;
+    padding-left: 10px;
+}
+
+
+
+/*menu and services page heading*/
+.menu{
+    margin: 40px;
+    color: #50311b;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+.menu > h2{
+    font-size: 40px;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+}
+
+/* green - #7a863b
+    orangeish - ##ffbb1d
+    yellowish - #fff1cd
+    brownish - #e09a4c
+    brown - #50311b
+*/
+
+/*home page content*/
+.CardWithTextOnTop{
+    position: relative;
+    text-align: center;
+    color: #fff1cd;
+}
+.FullImg{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    filter: blur(2px) brightness(60%);
+    z-index: 1;
+}
+.txtH{
+    position: absolute;
+    width: 90%;
+    max-width: 800px;
+    top: 25%;
+    left: 50%;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+    transform: translate(-50%,-50%);
+    font-size: 36px;
+    z-index: 2;
+}
+.txtP{
+    position: absolute;
+    width: 90%;
+    color: #fff1cd;
+    max-width: 800px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 16px;
+    z-index: 2;
+}
+.menuButton {
+    text-decoration: none;
+    position: absolute;
+    width: 150px;
+    padding: 15px 20px;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%);
+    background: radial-gradient(circle, #fff1cd, #7a863b);
+    color: #50311b;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+    border: none;
+    filter: drop-shadow(4px 4px 6px black);
+    border-radius: 8px;
+    font-size: 16px;
+    z-index: 3;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;    
+}
+.menuButton:hover {
+    transform: translate(-50%) scale(1.1);
+}
+
+
+.CardWithTextOnTheRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    padding: 40px 20px;
+    color: #50311b;
+    flex-wrap: wrap; /* to stack on mobile */
+}
+.CardWithTextOnTheRight:hover{
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+.HalfImg{
+    width: 300px;
+    height: 300px;
+    border-radius: 12px;
+    filter: drop-shadow(8px 8px 10px gray);
+    transition: transform 0.3s ease-in-out;
+}
+.HalfImg:hover {
+    transform: scale(1.05);
+}
+.txt1{
+    max-width: 500px;
+    flex: 1;
+    min-width: 300px;
+}
+.txt1 h3{
+    font-size: 24px;
+}
+.txt1 p{
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+
+
+
+/* default Card styling for Events, Favorites, Visit Us*/
+.cardSection{
+    padding: 40px 20px;
+}
+.cardSection:hover{
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+.headings {
+    text-align: center;
+    color: #50311b;
+    font-family: 'Montserrat' , sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 40px;
+}
+.cardSection > p{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap:wrap;
+    
+    
+}
+.card {
+    flex-basis: 280px; /*each card width*/
+    align-items: center;
+    background: radial-gradient(circle, #fff1cd, #7a863b);
+    padding: 24px;
+    filter: drop-shadow(8px 8px 10px gray);
+    transition: transform 0.3s ease-in-out;
+    
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.card h3, p{
+    color: #50311b;
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+}
+.card p{
+    color: #50311bd3; /*slightly transparent text*/
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+}
+
+
+/*Review Carousel on home page*/
+#reviewCarousel {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.review-content-box {
+    padding: 40px 60px 60px 60px;
+    margin-bottom: 40px; 
+}
+.review-content-box h3, 
+.review-content-box p {
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 600;
+    color: #ffbb1ddf;
+    filter: drop-shadow(1px 1px 1px #7a863b);
+    font-style: italic;
+    margin-top: 16px;
+}
+.carousel-indicators button {
+    background-color: #7a863b !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(18%) sepia(21%) saturate(1119%) hue-rotate(348deg) brightness(85%) contrast(88%);
+}
+
+/*email section*/
+#news {
+    background-color: #fff1cd;
+}
+
+#news:hover {
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+
+
+
+/*footer section*/
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 40px 20px;
+    border-top:solid #e09a4c;
+    flex-wrap: wrap;
+    gap: 30px;
+    color: #50311b;
+    background-color: #fff1cd;
+}
+.footerDiv{
+    display: flex;
+    flex-direction: column;
+}
+.hover{
+    display: inline-block;
+    padding: 3px;
+}
+.fLogo{
+    width: 120px;
+}
+footer > div {
+    display: flex;
+    flex-direction: column;
+}
+footer > .footerDiv > div > a:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+}
+.hover:hover {
+    color: #7a863b;
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+.fLogo:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+footer h6:hover {
+    color: #7a863b;
+    background-color: #ffebb9;
+    border-radius: 10px;
+}
+footer a {
+    text-decoration: none;
+    color: #50311b;
+}
+footer a p {
+    color: #50311b;
+    margin: 0;
+}
+.social-icons {
+    display: flex;
+    flex-direction: row; 
+}
+
+/*small text copyright at bottom*/
+.copyrightBar {
+    background-color: #fff1cd;
+    text-align: center;
+    padding: 16px;
+    border-top: 1px solid #e09a4c;
+}
+.copyrightBar p {
+    margin: 0;
+    color: #50311b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+/* all the responsive media queries*/
+/*desktop*/
+@media (min-width: 830px){
+    .txtH { font-size: 58px; }
+    .txtP { font-size: 28px; }
+    .menuButton {font-size: 32px; width: 250px;}
+    .HalfImg{ width: 500px; height: 500px;}
+    .txt1 h3 { font-size: 32px;}
+    .txt1 p { font-size: 16px;}
+}
+
+/*table/mobile*/
+@media screen and (max-width: 829px){
+    .txtH { font-size: 42px; }
+    .txtP { font-size: 20px; }
+    .menuButton {font-size: 16px; width: 150px;}
+    .HalfImg{ width: 300px; height: 300px;}
+    .txt1 h3 { font-size: 22px;}
+    .txt1 p { font-size: 16px;}
+
+    .headings {
+        font-size: 36px;
+    }
+    /* makes the mobile sidebar buttons appear */
+    #OpenSidebarButton, #CloseSidebarButton{
+        display: block;
+    }
+    /* Mobile sidebar styles */
+    nav{
+        position: fixed;
+        top: 0;
+        right: -100%; /*off screen by default*/
+        height: 100vh;
+        width: min(240px, 100%);
+        z-index: 10;
+        border-left: 1px solid #fff1cd;
+        transition: right 300ms ease-out;
+    }
+    /*class for javasript to show the menu */
+    nav.show{
+        right: 0;
+    }
+    /* when nav is shown it forces to show overlay too*/
+    nav.show ~ #overlay{
+        display: block;
+    }
+    nav ul{
+        width: 90%;
+        flex-direction: column;
+    }
+    nav a{
+        width: 100%;
+        padding-left: auto;
+    }
+    .headerLogoMobile {
+        display: block;
+    }
+
+    .CardWithTextOnTheRight {
+        flex-direction: column;
+    }
+    .CardWithTextOnTheLeft {
+        flex-direction: column-reverse;
+    }
+
+}
+
+
+/*mobile*/
+@media screen and (max-width: 590px){
+    .txtH { font-size: 30px; }
+    .txtP { font-size: 14px; }
+    .menuButton {font-size: 12px; width: 120px; padding: 6px 16px;}
+    .HalfImg{width: 200px; height: 200px;}
+    .txt1 h3 {font-size: 20px;}
+    .txt1 p {font-size: 12px;}
+    .headings {font-size: 30px;}
+}
+/*mobile*/
+@media screen and (max-width: 375px){
+    .txtH { font-size: 18px; }
+    .txtP { font-size: 10px; }
+    .menuButton {font-size: 8px; width: 80px; padding: 4px 12px;}
+    .HalfImg{width: 150px; height: 150px;}
+    .txt1 h3 {font-size: 18px;}
+    .txt1 p {font-size: 8px;}
+    .headings {font-size: 24px;}
+}
+
+
+
+
+
+
+
+
+
+
+
